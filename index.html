@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不确定相关计算</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- 加载Latex脚本-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <div class = "data">
+        <h1>输入多次实验数据</h1>
+        <textarea id="dataInput" placeholder="请输入一组数据,使用空格分隔"></textarea>
+        <h1>输入ΔB(B类不确定度)</h1>
+        <input type="text" id="deltaBInput" placeholder="请输入ΔB">  
+    </div>
+
+    <button id="calculateButton">计算</button>
+<!-- Latex 计算公式显示-->
+    <p>\(\overline{x} = \frac{\sum_{i=1}^{n} x_i}{n}\)</p>
+    <p>\(不考虑tp修正,\Delta_A = S = \sqrt{\frac{\sum^n_{i=1}{(x_i-\overline{x})^2}{}}{n-1}}\)</p>
+    <p>\(\Delta = \sqrt{\Delta_A^2+\Delta_B^2}\)</p>
+    <p>\(E = \frac{\Delta}{\overline{x}}\)</p>
+    <script type="text/javascript">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [['\\(','\\)']]
+          }
+        });
+    </script>
+<!-- Latex 计算公式显示-->
+    <h2>计算结果:</h2>    
+    <div id="calculationResult"></div>
+    <p>(有效位数应与输入数据有效位数相同,超出部分四舍五入)</p>
+
+
+    <script src="app.js"></script>
+</body>
+</html>

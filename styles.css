@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+
+}
+
+#dataInput {
+    width: 50%;          /* 设置宽度 */
+    height:200px;       /* 设置初始高度 */
+    resize: both;        /* 允许水平和垂直缩放 */
+    padding: 10px;       /* 内边距 */
+    font-size: 16px;     /* 字体大小 */
+    border: 1px solid #ccc; /* 边框样式 */
+    border-radius: 10px;  /* 边框圆角 */
+    box-sizing: border-box; /* 使边框和内边距包含在宽高内 */
+}
+
+button {
+    margin-top: 10px;    /* 按钮上方间距 */
+    padding: 10px 15px;  /* 按钮内边距 */
+    font-size: 16px;     /* 字体大小 */
+}
