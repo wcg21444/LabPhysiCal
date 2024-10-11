@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字计算</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="tabs-container">
+        <a href="index.html" class="tab">不确定度计算</a>
+    </div>
+    <h1>数字计算</h1>
+    <table>
+        <tr>
+            <th>n波节数</th>
+            <th>T张力(N)</th>
+            <th>f频率(Hz)</th>
+            <th>L弦长(m)</th>
+        </tr>
+        <tr>
+            <td><input type="number" id="n波节数" placeholder="请输入参数1"></td>
+            <td><input type="number" id="T张力" placeholder="请输入参数2"></td>
+            <td><input type="number" id="f频率" placeholder="请输入参数3"></td>
+            <td><input type="number" id="L弦长" placeholder="请输入参数4"></td>
+        </tr>
+    </table>
+    <button id="standwaveCalculate">计算</button>
+    <p id="result"></p>
+
+    <script src="stwaveApp.js"></script>
+</body>
+</html>

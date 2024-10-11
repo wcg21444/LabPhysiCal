@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 10px;
-
+    text-align: center;
+    margin: 50px;
 }
 
 #dataInput {
@@ -19,4 +19,60 @@ button {
     margin-top: 10px;    /* 按钮上方间距 */
     padding: 10px 15px;  /* 按钮内边距 */
     font-size: 16px;     /* 字体大小 */
+}
+
+.tab {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    color: white;
+    background-color: #007BFF;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.tab:hover {
+    background-color: #0056b3;
+}
+
+.tabs-container {
+    margin-top: 20px;
+}
+
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+input[type="number"] {
+    width: 100px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 20px;
 }

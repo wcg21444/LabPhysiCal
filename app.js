@@ -30,6 +30,8 @@ function getE(delta,average)
 {
     return delta/average
 }
+
+
 //计算调用
 document.getElementById('calculateButton').addEventListener('click', function() {
     const input = document.getElementById('dataInput').value; // 获取输入值
@@ -48,4 +50,3 @@ document.getElementById('calculateButton').addEventListener('click', function() 
     //html显示结果
     document.getElementById('calculationResult').innerText = `平均值: ${average.toFixed(6)}\n ΔA(A类不确定度): ${deltaA.toFixed(6)}\nΔ(不确定度): ${delta.toFixed(6)}\nE(相对不确定度):${E.toFixed(6)}\n`;
 });
-
