@@ -9,11 +9,12 @@
     <!-- 加载Latex脚本-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <!--导航页加载脚本-->
+    <script src="nav.js"></script>
 </head>
 <body>
-    <div class="tabs-container">
-        <a href="standwave.html" class="tab">驻波计算</a>
-    </div>
+    <div id="nav-content"></div>  <!-- 用于插入导航页 -->
+    
     <div class = "data">
         <h1>输入多次实验数据</h1>
         <textarea id="dataInput" placeholder="请输入一组数据,使用空格分隔"></textarea>
