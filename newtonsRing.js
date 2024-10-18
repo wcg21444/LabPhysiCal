@@ -8,8 +8,8 @@ function calculate() {
         const left = parseFloat(xLeft[i].value) || 0;
         const right = parseFloat(xRight[i].value) || 0;
         const difference = Math.abs(left - right);
-        d[i].value = difference.toFixed(2);
-        dSquared[i].value = (difference ** 2).toFixed(2);
+        d[i].value = difference.toFixed(5);
+        dSquared[i].value = (difference ** 2).toFixed(5);
     }
 }
 
@@ -28,7 +28,7 @@ function calculateA() {
         const dMPlusN = parseFloat(pair[0]) || 0;
         const dM = parseFloat(pair[1]) || 0;
         const aValue = dMPlusN - dM;
-        aCells[index].value = aValue.toFixed(2);
+        aCells[index].value = aValue.toFixed(5);
     });
 }
 
@@ -37,8 +37,16 @@ function calculateStats() {
     const values = Array.from(aCells).map(cell => parseFloat(cell.value) || 0);
     
     const mean = values.reduce((sum, val) => sum + val, 0) / values.length;
-    const stdDev = Math.sqrt(values.reduce((sum, val) => sum + (val - mean) ** 2, 0) / values.length);
-    
-    document.getElementById('mean').textContent = mean.toFixed(2);
-    document.getElementById('stdDev').textContent = stdDev.toFixed(2);
+    const stdDev = Math.sqrt(values.reduce((sum, val) => sum + (val - mean) ** 2, 0) /( values.length-1));
+    const DeltaDSquare = 2.5*stdDev;
+    const n = 15;
+    const lbd = 589.3e-3;
+    const R_avg = mean/(4*n*lbd)
+    const uncertainRatio = DeltaDSquare/mean;
+
+    document.getElementById('mean').textContent = mean.toFixed(5);
+    document.getElementById('stdDev').textContent = stdDev.toFixed(5);
+    document.getElementById('DeltaD^2').textContent = DeltaDSquare.toFixed(5);
+    document.getElementById('R_avg').textContent = R_avg.toFixed(5);
+    document.getElementById('DeltaR').textContent = uncertainRatio.toFixed(5);
 }
